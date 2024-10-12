@@ -11,8 +11,9 @@ import { AuthProvider } from './ui/pages/LoginPage/AuthContext.jsx'
 import ProtectedRoute from './ui/components/ProtectedRoute.jsx'
 
 function App() {
+  console.log("env", import.meta.env.VITE_BACKEND);
+    
   return (
-
     <AuthProvider>
       <BrowserRouter>
         <Routes>
