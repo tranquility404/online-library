@@ -16,6 +16,8 @@ export default function HomePage() {
         queryFn: getAllBooks,
         staleTime: Infinity
     });
+    console.log("env", import.meta.env.VITE_BACKEND);
+    
 
     console.log(data, isLoading);
 
