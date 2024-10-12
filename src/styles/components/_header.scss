@@ -1,0 +1,51 @@
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  gap: 2.4rem;
+  height: $header-height;
+  align-items: center;
+  background-color: $primary-color;
+  padding: 0 1.4rem;
+  color: $secondary-color;
+
+  .app-name {
+    font-size: 1.6rem;
+    // font-family: 'Times New Roman', Times, serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+  }
+
+  .profile-img {
+    margin-left: auto;
+    background-color: $secondary-color;
+    width: fit-content;
+    border-radius: 999rem;
+    border: 2px solid $accent-color;
+    padding: .4rem;
+    // overflow: hidden;
+
+    >img {
+      width: 2rem;
+      height: 2rem;
+      object-fit: cover;
+    }
+  }
+}
+
+main {
+  padding-top: $header-height;
+  padding-left: 0;
+  height: calc(100dvh - $header-height);
+  transition: padding-left ease-in-out 250ms;
+}
+
+aside.is-open {
+  width: $sidebar-width;
+
+  ~main {
+    padding-left: $sidebar-width;
+  }
+}

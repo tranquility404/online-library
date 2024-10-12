@@ -1,0 +1,28 @@
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem 1.2rem;
+    align-items: center;
+
+    @media(min-width: $small-desktop) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.grid2 {
+    @media(min-width: $small-desktop) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0 1rem;
+    }
+    @media(min-width: $avg-desktop) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}

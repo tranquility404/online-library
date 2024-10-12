@@ -1,0 +1,68 @@
+@import "../constants/colors";
+
+.chat-bot {
+    .fab {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        > .bpFabContainer  {
+            background-color: var(--accent-color);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+            > * {
+                background-color: white;
+            }
+        }
+
+        > .bpFabContainer:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    .bot-webchat {
+        position: fixed;
+        width: 0;
+        height: 0;
+        bottom: 2rem;
+        right: 2rem;
+        transition: all ease-in-out 250ms;
+    }
+
+    .bpContainer {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        
+        .bpHeaderContainer {
+            background-color: $accent-color;
+            
+            > * > * {
+                color: $secondary-color;
+                > * {
+                    color: $secondary-color;
+                }
+                > *:hover {
+                    background-color: lighten($accent-color, 10%);
+                }
+            }
+        }
+
+        .bpComposerInput  {
+            scrollbar-width: none;
+        }
+
+        .bpComposerUploadButtonIcon {
+            color: $accent-color;
+        }
+    }
+
+    &.is-open {
+        >.fab {
+            display: none;
+        }
+
+        >.bot-webchat {
+            width: 25%;
+            min-width: 340px;
+            height: 70dvh;
+        }
+    }
+
+}

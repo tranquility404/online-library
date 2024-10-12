@@ -1,0 +1,36 @@
+.quiz-guide-dialog {
+    width: 30%;
+    
+    .popup-info {
+        padding: .8rem 1.6rem;
+    }
+    
+    .popup-info > ol {
+        display: flex;
+        flex-direction: column;
+        padding-left: 1.2rem;
+        gap: .4rem;
+
+        > li {
+            list-style: decimal;
+        }
+    }
+    
+    .popup-info .btn-group {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid #999;
+        margin-top: 10px;
+        padding: 15px 0 7px;
+    }
+    
+    .popup-info > .btn-group > .btn {
+        border-radius: 6px;
+        font-weight: 600;
+    }
+}
+
+.quiz-guide-dialog::backdrop {
+    backdrop-filter: blur(2px);
+}

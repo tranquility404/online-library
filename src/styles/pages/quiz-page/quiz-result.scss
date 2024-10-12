@@ -1,0 +1,27 @@
+.quiz-result-dialog {
+    width: 35%;
+
+    .result-box {
+        background-size: contain;
+        border: 2px solid var(--accent-color);
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+
+        > .circular-progress-bar {
+            width: 16rem;
+            height: 16rem;
+        }
+
+        > .buttons {
+            margin-top: 2rem;
+            display: flex;
+        }
+    }
+}
+
+.quiz-result-dialog::backdrop {
+    backdrop-filter: blur(2px);
+}

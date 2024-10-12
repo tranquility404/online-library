@@ -1,0 +1,22 @@
+.popup-dialog {
+    border: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: .8rem;
+    background: var(--secondary-color);
+    animation: popup 300ms ease-out forwards;
+}
+
+@keyframes popup {
+    from {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+        pointer-events: none;
+    }
+    to {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+        pointer-events: auto;
+    }
+}

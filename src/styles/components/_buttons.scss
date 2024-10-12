@@ -1,0 +1,52 @@
+.btn {
+  padding: .66rem 1.4rem;
+  min-width: fit-content;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  user-select: none;
+  @include center;
+}
+
+.btn--rounded {
+  border-radius: 999rem;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.btn--primary {
+  background-color: $accent-color;
+  color: $secondary-color;
+  border: 2.4px solid $accent-color;
+}
+
+.btn--secondary {
+  background-color: $secondary-color;
+  color: $accent-color;
+  border: 2.4px solid $accent-color;
+}
+
+.btn--secondary2 {
+  color: $secondary-color;
+  border: 2.4px solid $secondary-color;
+}
+
+.btn--disabled {
+  background: rgba(255, 255, 255, .1);
+  border: 2px solid rgba(255, 255, 255, .1);
+  color: rgba(255, 255, 255, .3);
+  pointer-events: none;
+}
+
+.btn--primary:hover {
+  background: lighten($accent-color, 15%);
+  border-color: lighten($accent-color, 15%);
+}
+
+.btn--secondary:hover {
+  background: darken($secondary-color, 10%);
+}
+
+.btn--danger:hover {
+  background-color: darken(red, 10%);
+}
