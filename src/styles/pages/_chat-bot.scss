@@ -51,6 +51,9 @@
         .bpComposerUploadButtonIcon {
             color: $accent-color;
         }
+        .bpComposerPoweredBy {
+            display: none;
+        }
     }
 
     &.is-open {
