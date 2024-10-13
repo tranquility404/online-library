@@ -4,23 +4,22 @@ import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { getBookEpub, getEpubBufferData } from "../../scripts/api/ApiRequests";
 import "../../styles/pages/epub-reader.scss";
-import axios from "axios";
 
 export default function EpubReader() {
     const location = useLocation();
     const { from, bookId } = location.state;
 
     console.log(bookId);
-    
-    const { data:bookUrl } = useQuery({
+
+    const { data: bookUrl } = useQuery({
         queryKey: ["bookUrl", bookId],
         queryFn: () => getBookEpub(bookId),
         enabled: !!bookId
     });
 
     // console.log(bookUrl);
-    
-    const { data:bookBuffer, isLoading, error, isError, status } = useQuery({
+
+    const { data: bookBuffer, isSuccess,  error, isError, status, } = useQuery({
         queryKey: ["bookBuffer", bookUrl],
         queryFn: () => getEpubBufferData(bookUrl),
         onSuccess: (data) => {
@@ -33,9 +32,9 @@ export default function EpubReader() {
     console.log(bookBuffer);
     // const blob = new Blob([bookBuffer], { type: 'application/epub+zip' });
 
-        // Create a URL for the Blob
+    // Create a URL for the Blob
     // const epubBlobUrl = URL.createObjectURL(blob);
-    
+
     const viewerRef = useRef(null);
 
     const localB = Epub(bookBuffer);
@@ -49,12 +48,12 @@ export default function EpubReader() {
         layout: 'reflowable'
     });
     bookRendition.themes.fontSize("1.4rem");
-            // bookRendition.moveTo(8);
+    // bookRendition.moveTo(8);
     bookRendition.display();
 
     bookRendition.on('displayed', () => {
         console.log("displayed");
-        
+
         const firstEpubContainer = document.querySelector('.epub-container');
         firstEpubContainer.style.display = 'none';
     });
@@ -77,25 +76,31 @@ export default function EpubReader() {
     const [rendition, setRendition] = useState(bookRendition);
 
     // useEffect(() => {
-        // if (!book) return;
-        // console.log(book);
-        
+    // if (!book) return;
+    // console.log(book);
 
-        // const bookRendition = book.renderTo(viewerRef.current, {
-            // width: "100%",
-            // height: "100%",
-            // flow: "paginated",
-            // spread: "both",
-            // allowScriptedContent: true,
-            // method: "default",
-            // layout: 'reflowable'
-        // });
 
-        // bookRendition.themes.fontSize("1.4rem");
-            // bookRendition.moveTo(8);
-        // setRendition(bookRendition);
-        // bookRendition.display();
+    // const bookRendition = book.renderTo(viewerRef.current, {
+    // width: "100%",
+    // height: "100%",
+    // flow: "paginated",
+    // spread: "both",
+    // allowScriptedContent: true,
+    // method: "default",
+    // layout: 'reflowable'
+    // });
+
+    // bookRendition.themes.fontSize("1.4rem");
+    // bookRendition.moveTo(8);
+    // setRendition(bookRendition);
+    // bookRendition.display();
     // }, [book])
+
+    // useEffect(() => {
+    //     if (isSuccess)
+    //         alert("Book Loaded");
+
+    // }, [isSuccess]);
 
     useEffect(() => {
         if (!rendition) return;
@@ -105,47 +110,47 @@ export default function EpubReader() {
         console.log("on", rendition.on);
         console.log("viewer", viewerRef);
         console.log("book", rendition.book);
-        
-        
-        
+
+
+
 
         // const yoyo = async () => {
-            // const a = await book.opened;
-            // .then(() => {
-            // console.log("finally opened", book);
+        // const a = await book.opened;
+        // .then(() => {
+        // console.log("finally opened", book);
 
 
-                // height: "100%",
-                // epubBook.path
+        // height: "100%",
+        // epubBook.path
 
-                // console.log(epubBook.spine);
-                // book.opened.then(() => {
-                // console.log("opened", book);
-                // setLoading(false);  // Set loading to false after loading is complete
-                //   });
-            // });
+        // console.log(epubBook.spine);
+        // book.opened.then(() => {
+        // console.log("opened", book);
+        // setLoading(false);  // Set loading to false after loading is complete
+        //   });
+        // });
         // }
 
         // yoyo();
 
-        
 
-        
+
+
 
     }, [rendition])
 
     const nextPage = () => {
         // if (rendition) {
-            // console.log(rendition);
+        // console.log(rendition);
 
-            bookRendition.next();
-            
+        bookRendition.next();
+
         // }
     };
 
     const prevPage = () => {
         // if (rendition) {
-            bookRendition.prev();
+        bookRendition.prev();
         // }
     };
 
