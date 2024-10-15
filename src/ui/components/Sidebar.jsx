@@ -1,11 +1,11 @@
-import img from "../../assets/images/profile.png"
-import { Link } from "react-router-dom";
-import { AuthContext } from "../pages/LoginPage/AuthContext";
 import { useContext } from "react";
+import img from "../../assets/images/profile.png";
 import { logout } from "../../scripts/api/ApiRequests";
+import "../../styles/components/_sidebar.scss";
+import { AuthStatusContext } from "../pages/LoginPage/AuthStatusContext";
 
 export default function Sidebar({ isNavOpen }) {
-    const { setIsAuthenticated } = useContext(AuthContext);
+    const { setIsAuthenticated } = useContext(AuthStatusContext);
 
     const logOutClicked = async () => {
         const res = await logout();
@@ -28,29 +28,29 @@ export default function Sidebar({ isNavOpen }) {
             <nav>
                 <ul>
                     <li>
-                        <i class="fas fa-book"></i> My Collection
-                        <a href="#" class="sidebar-link"></a>
+                        <i className="fas fa-book"></i> My Collection
+                        <a href="#" className="sidebar-link"></a>
                     </li>
                     <li>
-                        <i class="fas fa-trophy"></i> Leaderboard
-                        <a href="#" class="sidebar-link"></a>
+                        <i className="fas fa-trophy"></i> Leaderboard
+                        <a href="#" className="sidebar-link"></a>
                     </li>
                     <li>
-                        <i class="fas fa-history"></i> Quiz History
-                        <a href="#" class="sidebar-link"></a>
+                        <i className="fas fa-history"></i> Quiz History
+                        <a href="#" className="sidebar-link"></a>
                     </li>
 
                     <li>
-                        <i class="fas fa-book-reader"></i> Request a Book
-                        <a href="#" class="sidebar-link"></a>
+                        <i className="fas fa-book-reader"></i> Request a Book
+                        <a href="#" className="sidebar-link"></a>
                     </li>
                     <li>
-                        <i class="fas fa-comment-alt"></i> Feedback
-                        <a href="#" class="sidebar-link"></a>
+                        <i className="fas fa-comment-alt"></i> Feedback
+                        <a href="#" className="sidebar-link"></a>
                     </li>
                     <li className="logout" onClick={logOutClicked}>
-                        <i class="fas fa-sign-out-alt"></i> Logout
-                        <a href="#" class="sidebar-link logout"></a>
+                        <i className="fas fa-sign-out-alt"></i> Logout
+                        <a href="#" className="sidebar-link logout"></a>
                     </li>
                 </ul>
 

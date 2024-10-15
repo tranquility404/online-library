@@ -1,9 +1,9 @@
 import '../../styles/components/_circular-progress-bar.scss';
 
 export default function CircularProgressBar({ percentage }) {
-  // #4d5bf9
+  const accentColor = "#3B82F6";
   const circleStyle = {
-    background: `conic-gradient(var(--accent-color) ${percentage * 3.6}deg, #ededed 0deg)`,
+    background: `conic-gradient(${accentColor} ${percentage * 3.6}deg, #ededed 0deg)`,
   };
 
   return (

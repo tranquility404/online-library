@@ -1,3 +1,4 @@
+import "../../../../styles/components/_popup_dialog.scss";
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
 import { getBookQuiz } from "../../../../scripts/api/ApiRequests";

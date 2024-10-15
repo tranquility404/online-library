@@ -23,11 +23,10 @@ export default function HomePage() {
         <div className="home-page">
             
             {/* <h2>Genres</h2> */}
-            <div class="genres grid-container">
+            <div className="genres grid-container">
             {
-                genres && genres.map(it => (
-
-                    <div class="genre-item">{it.name}</div>
+                genres && genres.map((it, idx) => (
+                    <div className="genre-item" key={idx}>{it.name}</div>
                 ))
             }
             </div>

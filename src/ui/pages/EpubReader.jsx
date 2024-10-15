@@ -23,10 +23,7 @@ export default function EpubReader() {
     const { data: bookBuffer, isLoading: isEpubLoading } = useQuery({
         queryKey: ["bookBuffer", bookUrl],
         queryFn: () => getEpubBufferData(bookUrl),
-        onSuccess: (data) => {
-            console.log("loaded ", data);
-            loadBook(data);
-        },
+        staleTime: Infinity,
         enabled: !!bookUrl,
     });
 
@@ -34,7 +31,6 @@ export default function EpubReader() {
         if (bookBuffer) {
             console.log(bookBuffer);
             console.log(viewerRef.current);
-            
             
             if (rendition.current) {
                 rendition.current.destroy();

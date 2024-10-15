@@ -1,12 +1,12 @@
 // import { useState } from "react";
-
+import "../../styles/components/_header.scss";
 import { useContext } from "react";
 import img from "../../assets/images/profile.png";
-import { AuthContext } from "../pages/LoginPage/AuthContext.jsx";
+import { AuthStatusContext } from "../pages/LoginPage/AuthStatusContext.jsx";
 
 export default function Header({isNavOpen, setNavOpen}) {
     // const [isNavOpen, setNavOpen] = useState(false);
-    const { setIsAuthenticated } = useContext(AuthContext);
+    const { setIsAuthenticated } = useContext(AuthStatusContext);
     const toggleNav = () => {
         setNavOpen(!isNavOpen)
     };

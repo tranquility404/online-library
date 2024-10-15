@@ -1,6 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-@import "../constants/breakpoints";
-
 
 *, *::before, *::after {
   margin: 0;
@@ -43,4 +41,23 @@ li {
 a {
   color: $secondary-color;
   text-decoration: none;
+}
+
+.link {
+  background-color: transparent;
+  color: $link-color;
+  font-size: .85rem;
+}
+
+.link:hover {
+  background-color: lighten($accent-color, 30%);
+  cursor: pointer;
+}
+
+input {
+  border: none;
+  outline: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 13px;
 }

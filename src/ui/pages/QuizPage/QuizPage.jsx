@@ -18,6 +18,7 @@ export default function QuizPage() {
     const { data:quiz } = useQuery({
         queryKey: ["quiz-json", quizUrl],
         queryFn: () => getQuizJsonData(quizUrl),
+        staleTime: Infinity,
         enabled: !!quizUrl
     });
 

@@ -1,4 +1,4 @@
-@import "../constants/colors";
+// @import "../constants/colors";
 
 .chat-bot {
     .fab {
@@ -6,7 +6,7 @@
         bottom: 2rem;
         right: 2rem;
         > .bpFabContainer  {
-            background-color: var(--accent-color);
+            background-color: $accent-color;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
             > * {
                 background-color: white;

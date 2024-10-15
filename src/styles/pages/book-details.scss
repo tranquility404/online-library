@@ -1,7 +1,7 @@
 .book-details {
 
     .back-icon {
-        color: var(--primary-color);
+        color: $primary-color;
         margin: 2rem;
     }
 
@@ -86,13 +86,13 @@
                 // background-color: aqua;
 
                 &.is-selected {
-                    border-left: 3.2px solid var(--accent-color);
-                    background-color: var(--border-color);
+                    border-left: 3.2px solid $accent-color;
+                    background-color: $border-color;
                 }
             }
 
             > ul > li:hover {
-                background-color: var(--border-color);
+                background-color: $border-color;
             }
 
             > ul > li > img {

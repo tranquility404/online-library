@@ -1,9 +1,9 @@
 import { login, register } from "../api/ApiRequests.js";
-import { AuthContext } from "../../ui/pages/LoginPage/AuthContext.jsx";
+import { AuthStatusContext } from "../../ui/pages/LoginPage/AuthStatusContext.jsx";
 import { useContext } from "react";
 
 export const useAuthHelper = () => {
-    const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
+    const { isAuthenticated, setIsAuthenticated } = useContext(AuthStatusContext);
 
     const initiateRegistration = async (name, email, password, navigate) => {
         const res = await register({ name, email, password });
@@ -19,7 +19,7 @@ export const useAuthHelper = () => {
 
     const initiateLogin = async (email, password, navigate) => {
         const res = await login({ email, password });
-        
+
         if (res.status == 200) {
             setIsAuthenticated(true);
             navigate("/");
