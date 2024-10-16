@@ -2,10 +2,10 @@ import "../../styles/pages/book-details.scss";
 import "../../styles/pages/quiz-page/quiz-dialog.scss";
 
 import { useQuery } from "@tanstack/react-query";
-import { useRef } from "react";
+import React, { useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { getSimilarBooks } from "../../scripts/api/ApiRequests.js";
-import QuizGuide from "./QuizPage/components/QuizGuide.jsx";
+const QuizGuide = React.lazy(() => import("./QuizPage/components/QuizGuide.jsx"));
 
 export default function BookDetails() {
     const location = useLocation();

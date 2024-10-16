@@ -32,7 +32,7 @@ export default function ChatBot() {
       <WebchatProvider
         theme={theme}
         client={client}
-        isTyping={true}
+        // isTyping={true}
         configuration={configuration}
         allowFileUpload={true}
         closeWindow={toggleWebchat}

@@ -131,7 +131,7 @@ form {
 .toggle-panel {
     width: 35%;
     background-color: $accent-color;
-    right: 0;
+    // right: 0;
     color: white;
     padding: 2rem 4rem;
     padding-top: 4rem;
@@ -146,7 +146,7 @@ form {
     }
 
     @media (max-width: $avg-desktop) {
-        left: 60%;
+        // left: 60%;
         padding: 1.2rem;
 
         > h2 {
